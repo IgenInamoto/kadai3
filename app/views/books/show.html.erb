@@ -1,0 +1,39 @@
+<!--book投稿後のページ-->
+<p id="notice"></p>
+  <div class="container">
+    <div class="row">
+      <div class= "col-xs-3">
+      <!--部分テンプレート挿入部分-->
+      <%= render 'template', user: @user, book: @book_new %>　　　
+      <!--部分テンプレート挿入部分-->
+      </div>  
+ 
+  
+  
+  <div class= "col-md-8 offset-md-1">
+    <h2>Book detail</h2>
+    <table class='table' >
+      <tbody>
+       <tr>
+        <td>
+          <%= image_tag @user.get_profile_image(100,100) %>
+          <%= link_to user_path(@book.user_id) do %>
+          <nav>
+          <%= @book.user.name %>
+          </nav>
+          <% end %>
+   
+    
+    <td><%= link_to @book.title %></td>
+    <td><%= @book.body %></td>
+    <% if @book.user_id == current_user.id %>
+    <td><%= link_to "Edit", edit_book_path(@book.id),class:"btn-sm btn-success" %></td>
+    <td><%= link_to "Destroy", book_path(@book.id), class:"btn-sm btn-danger destroy(@book.id)", method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+    <% end %>
+     </td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+  </div>
+</div>
