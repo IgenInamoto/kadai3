@@ -15,9 +15,20 @@
                 </tr>
             </tbody>
         </table>
-    <%= link_to edit_user_path(user.id),class:"btn btn-outline-secondary btn-block" do %>
-    <i class="fa-solid fa-user-gear"></i>
-    <% end %>
+            <div class="row">
+            <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
+              <i class="fas fa-user-cog"></i>
+            <% end %>
+               <%# if @user == current_user %>
+                    <%#= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
+                      <!--<i class="fas fa-user-cog"></i>-->
+                    <%# end %>
+                <%# else %>
+                    <%#= link_to user_path(current_user.id), class: "btn btn-outline-secondary btn-block" do %>
+                      <!--<i class="fas fa-user-cog"></i>-->
+                    <%# end %>
+                <% #end %>
+                    
     
            
         <%= form_with model: book do |f| %>
@@ -31,3 +42,4 @@
         </nav>
         
         <% end %>
+        </div>

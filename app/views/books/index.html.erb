@@ -1,4 +1,7 @@
 <!--投稿されたbookの一覧ページ-->
+<% flash.each do |message_type, message| %>
+  <div><%= message %></div>
+<% end %>
 <p id="notice"></p>
     <div class="container px-5 px-sm-0">
      <div id="error_explanation">

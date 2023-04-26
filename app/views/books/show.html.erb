@@ -1,8 +1,11 @@
 <!--book投稿後のページ-->
+<% flash.each do |message_type, message| %>
+  <div><%= message %></div>
+<% end %>
 <p id="notice"></p>
   <div class="container">
     <div class="row">
-      <div class= "col-xs-3">
+      <div class= "col-md-3">
       <!--部分テンプレート挿入部分-->
       <%= render 'template', user: @user, book: @book_new %>　　　
       <!--部分テンプレート挿入部分-->
@@ -17,7 +20,7 @@
        <tr>
         <td>
           <%= image_tag @user.get_profile_image(100,100) %>
-          <%= link_to user_path(@book.user_id) do %>
+          <%= link_to user_path(@book.user.id) do %>
           <nav>
           <%= @book.user.name %>
           </nav>
