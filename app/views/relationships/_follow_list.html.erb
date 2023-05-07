@@ -1,0 +1,22 @@
+<!--フォロー、フォロワー一覧画面表示用テンプレート-->
+
+<% if @users.exists? %>
+    <% @users.each do |user| %>
+        <table>
+            <thead>
+                <tr>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td>follows: <%= user.followings.count %></td>
+                    <td>followers: <%= user.followers.count %></td>
+                </tr>
+            </tbody>
+        </table>
+    <% end %>
+<% else %>
+    <p>ユーザーはいません</p>
+<% end %>

@@ -8,9 +8,25 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @following_users = @user.following_user
+    @follower_users = @user.follower_user
     @book = Book.new
     @books = @user.books
   end
+  
+    # フォロー一覧
+  def follows
+    user = User.find(params[:id])
+    @users = user.following_user
+  end
+  
+  # フォロワー一覧
+  def followers
+    user = User.find(params[:id])
+    @user = user.follower_user
+  end
+  
+  
   
   def edit
     @user = User.find(params[:id])
