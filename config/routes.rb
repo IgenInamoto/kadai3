@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
   get "home/about" => "homes#about"
+  get "search" => "searches#search"
   
   # ネストさせる
   resources :books, only:[:new, :edit, :index, :show, :create, :update, :destroy] do
