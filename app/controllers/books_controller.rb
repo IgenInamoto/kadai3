@@ -15,10 +15,7 @@ class BooksController < ApplicationController
         render :index
     end
   end
-		  
-
-    
-
+  
   def index
     @user = current_user
     @books = Book.all

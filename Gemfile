@@ -59,3 +59,5 @@ gem 'devise'
 gem 'net-smtp'
 
 gem "font-awesome-rails"
+
+# gem 'jquery-rails'
